@@ -1,0 +1,41 @@
+<div class="container-fluid mt-3">
+  <div class="form">
+    <h3 class="text-center">Editar informações funcionário</h3>
+    <div class="label-float my-5">
+      <input type="text" placeholder=" " name='cargo_nome' [(ngModel)]="funcionario.func_nome">
+      <label>Nome do Funcionário</label>
+    </div>
+    <div class="label-float my-5">
+      <input type="text" placeholder=" " name='cargo_atribuicao' [(ngModel)]="funcionario.func_cidade">
+      <label>Cidade do funcionário</label>
+    </div>
+    <div class="d-flex">
+      <button (click)="editWorker()" class="button">Atualizar</button>
+      <button (click)="mostrarModal(id_cargo)" class="btn btn-secondary mx-3">Alterar cargo</button>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="modal">
+  <div class="minha-modal text-center">
+    <div>
+      <h5 class=" text-modal title-modal">Transferir funcionário</h5>
+    </div>
+    <h6 class="my-4 text-modal">Para qual cargo deseja transferir o funcionário?</h6>
+    <!-- <div class="label-float my-5 input-modal">
+      <input type="text" placeholder=" " name='cargo_nome' style="width: 300px;" name="novo_cargo"
+        [(ngModel)]="novo_cargo">
+      <label>ID do cargo</label>
+    </div> -->
+    <div class="p-4">
+      <select class="form-select form-select-sm mb-3" name='cargo_nome' name="novo_cargo" [(ngModel)]="novo_cargo">
+        <option *ngFor="let cargo of cargos">
+          #{{cargo.id_cargo}} - {{cargo.cargo_nome}}
+        </option>
+      </select>
+    </div>
+    <button (click)="fecharModal()" class="btn">Cancelar</button>
+    <button (click)="trocarCargo()" class="btn">Confirmar</button>
+  </div>
+</div>

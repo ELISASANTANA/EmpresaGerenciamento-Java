@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  <div class="form">
+    <h3 class="text-center">Cadastro de cargo</h3>
+    <div class="label-float my-5">
+      <input type="text" placeholder=" " name='cargo_nome' [(ngModel)]="cargo.cargo_nome">
+      <label>Nome do cargo</label>
+      <!-- <div *ngIf="!form.controls['nome'].pristine && form.controls['nome'].errors">
+        <p *ngIf="form.controls['nome'].hasError('required')" class="text-danger">
+          Nome é obrigatório.
+        </p>
+        <p *ngIf="form.controls['nome'].hasError('minlength')" class="text-danger">
+          Nome deve ter no mínimo 3 caracteres.
+        </p>
+        <p *ngIf="form.controls['nome'].hasError('maxlength')" class="text-danger">
+          Nome deve ter no máximo 100 caracteres.
+        </p>
+        <p *ngIf="form.controls['nome'].hasError('pattern')" class="text-danger">
+          Nome deve ter apenas letras.
+        </p>
+      </div> -->
+    </div>
+    <div class="label-float my-5">
+      <input type="text" placeholder=" " name='cargo_atribuicao' [(ngModel)]="cargo.cargo_atribuicao">
+      <label>Atribuição do cargo</label>
+    </div>
+
+    <button (click)="addJob()" class="button">Cadastrar</button>
+
+  </div>
+</div>

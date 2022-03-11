@@ -1,0 +1,125 @@
+.container {
+  display: flex;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.list {
+  width: 50%;
+  height: 400px;
+  background-color: rgb(39, 48, 54);
+  border-radius: 15px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  justify-content: center;
+  overflow: scroll;
+  font-family: aktiv-grotesk-extended, sans-serif;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.cargo {
+  margin: 20px;
+  width: 300px;
+  height: 70px;
+  background-color: rgba(39, 48, 54, .85);
+  color: #ffff;
+  border-radius: 10px;
+  padding: 18px 0 0 20px;
+  align-items: center;
+}
+
+i {
+  cursor: pointer;
+  margin: 0 5px 0 5px;
+}
+
+.content {
+  position: relative;
+  left: 540px;
+  top: 30px;
+}
+
+.table {
+  color: #fff;
+  width: 550px;
+}
+
+th,
+td {
+  margin: 0 20px 0 20px;
+}
+
+.content {
+  position: relative;
+  left: 500px;
+  top: 25px;
+}
+
+.content__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.button {
+  pointer-events: auto;
+  cursor: pointer;
+  padding: 16px 48px;
+  font-family: inherit;
+  font-size: inherit;
+  position: relative;
+  display: inline-block;
+}
+
+.button::before,
+.button::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.button--mimas {
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  border-radius: 41px;
+  overflow: hidden;
+  color: #FCD980;
+  background: #FCD980;
+}
+
+.button--mimas span {
+  position: relative;
+  mix-blend-mode: difference;
+}
+
+.button--mimas::before {
+  content: '';
+  background: #181f2b;
+  width: 120%;
+  left: -10%;
+  transform: skew(30deg);
+  transition: transform 0.3s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+.button--mimas:hover::before {
+  transform: translate3d(100%, 0, 0);
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 300px;
+  height: 300px;
+}

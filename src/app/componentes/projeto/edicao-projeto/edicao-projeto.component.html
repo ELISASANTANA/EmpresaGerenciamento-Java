@@ -1,0 +1,14 @@
+<div class="container-fluid">
+  <div class="form">
+    <h3 class="text-center">Cadastro de projeto</h3>
+    <div class="label-float my-5">
+      <input type="text" placeholder=" " name='proj_nome' [(ngModel)]="projeto.proj_nome">
+      <label>Nome do projeto</label>
+    </div>
+    <div class="label-float my-5">
+      <input type="text" placeholder=" " name='proj_filial' [(ngModel)]="projeto.proj_filial">
+      <label>Filial do projeto</label>
+    </div>
+    <button (click)="editarProjeto()" class="button">Alterar</button>
+  </div>
+</div>

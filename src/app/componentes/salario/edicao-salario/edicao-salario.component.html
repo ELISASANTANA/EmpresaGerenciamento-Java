@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <div class="form">
+    <h3 class="text-center">Cadastro de cargo</h3>
+    <div class="label-float my-4">
+      <input type="text" placeholder=" " name='salario_descricao' [(ngModel)]="salario.salario_descricao">
+      <label>Descrição</label>
+    </div>
+    <div class="label-float my-4">
+      <input type="date" placeholder=" " name='data_receber_salario' [(ngModel)]="salario.data_receber_salario">
+      <label>Data de pagamento</label>
+    </div>
+    <div class="label-float my-4">
+      <input type="text" placeholder=" " name='salario_valor' currencyMask
+        [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align: 'left' }" [(ngModel)]="salario.salario_valor">
+      <label>Valor</label>
+    </div>
+    <div class="label-float my-4">
+      <input readonly type="text" placeholder=" " name='salario_status' value="PENDENTE"
+        [(ngModel)]="salario.salario_status">
+      <label>Status do pagamento</label>
+    </div>
+    <button (click)="editarSalario()" class="button">Alterar</button>
+  </div>
+</div>

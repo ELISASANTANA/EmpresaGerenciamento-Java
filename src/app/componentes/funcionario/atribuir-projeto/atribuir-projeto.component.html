@@ -1,0 +1,38 @@
+<div class="container-fluid mt-3 d-flex">
+  <div>
+    <div class="form">
+      <h3 class="text-center">Dados do Funcionário</h3>
+      <div class="label-float my-5">
+        <input readonly type="text" placeholder=" " name='func_nome' [(ngModel)]="funcionario.func_nome">
+        <label>Nome do Funcionário</label>
+      </div>
+      <div class="label-float my-5">
+        <input readonly type="text" placeholder=" " name='func_cidade' [(ngModel)]="funcionario.func_cidade">
+        <label>Cidade do funcionário</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form  ">
+    <h3 class="text-center">Dados do projeto</h3>
+    <div class="label-float my-5">
+      <input type="text" placeholder=" " name='proj_nome' [(ngModel)]="projEscolhido.proj_nome">
+      <label>Nome do Líder</label>
+    </div>
+    <div class="label-float my-5">
+      <input type="text" placeholder=" " name='proj_filial' [(ngModel)]="projEscolhido.proj_filial">
+      <label>Cidade do Líder</label>
+    </div>
+  </div>
+
+  <div class="form select">
+    <h3>Alterar líder do projeto</h3>
+    <select class="form-select form-select-sm mb-3" name="funcSemProjetoEscolhido" name="projEscolhido"
+      [(ngModel)]="projEscolhido" (ngModelChange)="mostrarProjeto()">
+      <option *ngFor="let projeto of projSemLider" [ngValue]="projeto">
+        {{projeto.proj_nome}}
+      </option>
+    </select>
+    <button (click)="atribuirProjetoFunc()" class="button">Definir líder do projeto</button>
+  </div>
+</div>

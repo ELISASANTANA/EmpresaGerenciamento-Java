@@ -1,0 +1,49 @@
+<ul class="content">
+  <li class="content__item">
+    <div>
+      <button routerLink="/funcionario/cadastro-salario/{{id_funcionario}}" class="button button--mimas"><span>Adicionar
+          pagamento</span></button>
+    </div>
+  </li>
+</ul>
+<h5 class="container title">Histórico de pagamento <h5 class="text-warning mx-2"> {{ funcionario.func_nome}}</h5>
+</h5>
+<div class="container">
+  <div class="list">
+    <table class="table text-center">
+      <thead>
+        <tr>
+          <th scope="col">Código</th>
+          <th scope="col">Salário Descrição</th>
+          <th scope="col">Data de pagamento</th>
+          <th scope="col">Valor</th>
+          <th scope="col" class="text-danger">Status</th>
+          <th scope="col" colspan="2">Pagar/Cancelar</th>
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let salario of salario">
+          <td>{{salario.codigo}}</td>
+          <td>{{salario.salario_descricao}}</td>
+          <td>{{salario.data_receber_salario | date: 'dd/MM/yyyy'}}</td>
+          <td>{{salario.salario_valor | currency: 'BRL'}}</td>
+          <td class="text-danger">{{salario.salario_status}}</td>
+          <td>
+            <button (click)="pagarSalario(salario, salario.codigo)" *ngIf="salario.salario_status == 'PENDENTE'"
+              class="btn btn-success">P</button>
+          </td>
+          <td>
+            <button (click)="cancelarSalario(salario, salario.codigo)" *ngIf="salario.salario_status == 'PENDENTE'"
+              class="btn btn-danger">A</button>
+          </td>
+          <td>
+            <i (click)="deletarSalario(salario.codigo)" class="fa-solid fa-eraser text-danger"></i>
+            <i routerLink="/funcionario/editar-salario/{{salario.codigo}}/{{id_funcionario}}"
+              class="fa-solid fa-pen text-warning"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="container">
+  <ol class="content">
+    <li class="content__item">
+      <button routerLink="/cadastro-funcionario/{{id_cargo}}" class="button button--mimas"><span>Adicionar
+          funcionário</span></button>
+    </li>
+  </ol>
+  <div class="list">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Nome do funcionario</th>
+          <th scope="col">Cidade</th>
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let funcionario of funcionarios">
+          <td>{{funcionario.func_nome}}</td>
+          <td>{{funcionario.func_cidade}}</td>
+          <td>
+            <i routerLink="/exclusao-funcionario/{{funcionario.id_funcionario}}/{{id_cargo}}"
+              class="fa-solid fa-eraser text-danger"></i>
+            <i routerLink="/editar-funcionario/{{funcionario.id_funcionario}}/{{id_cargo}}"
+              class="fa-solid fa-pen text-warning"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

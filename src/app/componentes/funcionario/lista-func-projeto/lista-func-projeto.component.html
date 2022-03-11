@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="list">
+    <table class="table text-center">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nome do funcionario</th>
+          <th scope="col">Cidade</th>
+          <th scope="col">ID Projeto</th>
+          <th scope="col">Projeto</th>
+          <th scope="col">Filial do Projeto</th>
+          <th scope="col">Atribuir Projeto</th>
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let funcionario of funcionarios">
+          <td>{{funcionario.id_funcionario}}</td>
+          <td>{{funcionario.func_nome}}</td>
+          <td>{{funcionario.func_cidade}}</td>
+          <td>{{funcionario.id_projeto}}</td>
+          <td>{{funcionario.proj_nome}}</td>
+          <td>{{funcionario.proj_filial}}</td>
+          <td><i class="fa-solid fa-circle-plus text-light"
+              routerLink="/projeto-funcionario/{{funcionario.id_funcionario}}"></i>
+          </td>
+          <td>
+            <i class="fa-solid fa-eraser text-danger"></i>
+            <i class="fa-solid fa-pen"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

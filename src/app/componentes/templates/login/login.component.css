@@ -1,0 +1,41 @@
+* {
+  color: #fff;
+}
+
+/* .container {
+  display: grid;
+  align-items: center;
+} */
+
+.login {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  height: 70vh;
+  /* border: 1px solid red; */
+}
+
+.login input {
+  background-color: #224957;
+  border: none;
+  width: 300px;
+  height: 45px;
+  border-radius: 10px;
+  padding-left: 10px;
+}
+
+.login span {
+  color: #20DF7F;
+  margin-left: auto;
+}
+
+.login button {
+  background-color: #20DF7F;
+  width: 300px;
+  height: 45px;
+  border-radius: 10px;
+  border: none;
+
+}

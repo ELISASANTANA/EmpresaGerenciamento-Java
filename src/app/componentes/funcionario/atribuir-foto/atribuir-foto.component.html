@@ -1,0 +1,18 @@
+<div class="container-fluid mt-3">
+  <div class="form">
+    <h3 class="text-center">Adicionar foto ao funcionário <h3 class="text-danger">{{this.funcionario.func_nome}}</h3>
+    </h3>
+    <!-- <div class="label-float my-5"> -->
+    <input type="text" placeholder=" " name='cargo_nome' [(ngModel)]="funcionario.func_nome" hidden>
+    <!-- <label>Nome do Funcionário</label> -->
+    <!-- </div> -->
+    <!-- <div class="label-float my-5"> -->
+    <input type="text" placeholder=" " name='cargo_atribuicao' [(ngModel)]="funcionario.func_cidade" hidden>
+    <!-- <label>Cidade do funcionário</label>
+    </div> -->
+    <div class="file mt-4">
+      <label>Adicionar foto ao funcionário:</label>
+      <input type="file" class="form-control" name="pro_foto" (change)="subirFoto($event)">
+    </div>
+  </div>
+</div>

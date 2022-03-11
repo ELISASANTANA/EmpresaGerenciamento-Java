@@ -1,0 +1,46 @@
+<div class="container-fluid mt-3 d-flex">
+
+  <div>
+    <div class="form  text-center">
+      <h3 class="text-center">Dados do Projeto</h3>
+      <div class="label-float my-5">
+        <input readonly type="text" placeholder=" " name='proj_nome' [(ngModel)]="projeto.proj_nome">
+        <label>Nome do Projeto</label>
+      </div>
+      <div class="label-float my-5">
+        <input readonly type="text" placeholder=" " name='proj_filial' [(ngModel)]="projeto.proj_filial">
+        <label>Filial do Projeto</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form  text-center">
+    <h3 class="text-center">Líder do projeto</h3>
+    <div class="label-float my-5">
+      <input type="text" placeholder=" " name='func_nome' [(ngModel)]="funcionario.func_nome">
+      <label>Nome do Líder</label>
+    </div>
+    <div class="label-float my-5">
+      <input type="text" placeholder=" " name='func_cidade' [(ngModel)]="funcionario.func_cidade">
+      <label>Cidade do Líder</label>
+
+      <div *ngIf="liderDefinido">
+        <!-- <button class="button">Alterar</button> -->
+        <button (click)="deixarProjetoSemLider()" class="button remove mt-4">Remover líder funcionario do
+          projeto</button>
+      </div>
+    </div>
+
+
+  </div>
+  <div class="form text-center select">
+    <h3>Alterar líder do projeto</h3>
+    <select class="form-select form-select-sm mb-3" name="funcSemProjetoEscolhido" [(ngModel)]="funcSemProjetoEscolhido"
+      (ngModelChange)="mostrarFuncionario()">
+      <option *ngFor="let funcionario of funcSemProjeto" [ngValue]="funcionario">
+        #{{funcionario.id_funcionario}} - {{funcionario.func_nome}}
+      </option>
+    </select>
+    <button (click)="atribuirFuncProjeto()" class="button">Definir funcionario</button>
+  </div>
+</div>

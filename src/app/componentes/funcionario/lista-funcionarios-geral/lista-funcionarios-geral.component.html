@@ -1,0 +1,28 @@
+<ul class="content">
+  <li class="content__item">
+    <div>
+      <button routerLink="/cadastrar-funcionario" class="button button--mimas"><span>Cadastrar
+          funcionário</span></button>
+    </div>
+  </li>
+</ul>
+<div class="cont d-flex row">
+  <div class="cards my-3 d-flex" *ngFor="let funcionario of funcionarios">
+    <!--  [(ngModel)]="foto" name="foto" ngDefaultControl> -->
+    <div class="foto">
+      <img src="../../../../{{funcionario.func_foto}}">
+    </div>
+    <div class="descricao">
+      <p>#{{funcionario.id_funcionario}}</p>
+      <h3>{{funcionario.func_nome}}</h3>
+      <h6>{{funcionario.func_cidade}}</h6>
+    </div>
+    <div class="salarios">
+      <!-- <a routerLink="/salario-funcionario/{{funcionario.id_funcionario}}">Histórico de pagamentos</a> -->
+      <i routerLink="/salario-funcionario/{{funcionario.id_funcionario}}"
+        class="fa-solid fa-money-check text-warning "></i>
+      <i (click)="deletarFuncionario(funcionario.id_funcionario)" class="fa-solid fa-eraser text-danger"></i>
+      <i routerLink="/funcionario/atribuir-foto/{{funcionario.id_funcionario}}" class="fa-solid fa-circle-plus"></i>
+    </div>
+  </div>
+</div>

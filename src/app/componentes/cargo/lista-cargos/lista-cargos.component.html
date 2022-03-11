@@ -1,0 +1,23 @@
+<div class="container">
+  <ul class="content">
+    <li class="content__item">
+      <button routerLink="/cadastro-cargo" class="button button--mimas"><span>Adicionar cargos</span></button>
+    </li>
+  </ul>
+  <div class="list">
+    <div class="cargo d-flex" *ngFor="let cargo of cargos">
+      <div>
+        <h4>{{cargo.cargo_nome}}</h4>
+        <p>{{cargo.cargo_atribuicao}}</p>
+      </div>
+      <div class="acoes">
+        <td>
+          <!-- <i routerLink="/funcionario-cargo/{{cargo.id_cargo}}" class="fa-solid fa-user text-primary"></i> -->
+          <button routerLink="/funcionario-cargo/{{cargo.id_cargo}}" class="btn btn-warning">Funcionários</button>
+        </td>
+        <i routerLink="/editar-cargo/{{cargo.id_cargo}}" class="fa-solid fa-pen mx-2"></i>
+        <i routerLink="/excluir-cargo/{{cargo.id_cargo}}" class="fa-solid fa-eraser text-danger"></i>
+      </div>
+    </div>
+  </div>
+</div>
