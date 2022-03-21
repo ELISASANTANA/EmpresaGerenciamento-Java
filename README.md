@@ -4,7 +4,7 @@ Crud desenvolvido em Java e framework Spring Boot juntamente ao framework Angula
 
 ## Documentation
 
-Com o servidor rodando é possível o acesso a documentação da aplicação pelo link: http://localhost:8080/swagger-ui/index.html
+Com o servidor rodando é possível o acesso a documentação da aplicação pelo link, gerado pela descrição de interface de API Swagger: http://localhost:8080/swagger-ui/index.html
 
 # EmpresaFront
 
