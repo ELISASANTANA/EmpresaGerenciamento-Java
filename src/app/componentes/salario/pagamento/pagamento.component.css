@@ -10,14 +10,14 @@
   background-color: rgb(39, 48, 54);
   border-radius: 15px;
   position: fixed;
-  top: 50%;
+  top: 58%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: grid;
-  justify-content: center;
   overflow: scroll;
   font-family: aktiv-grotesk-extended, sans-serif;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 10px 50px 10px 50px;
+
 }
 
 i {
@@ -28,6 +28,7 @@ i {
 .table {
   color: #fff;
   width: 1000px;
+  margin: auto;
 }
 
 .title {

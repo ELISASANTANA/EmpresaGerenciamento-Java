@@ -13,10 +13,9 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: grid;
+  /* display: grid;
   grid-template-columns: auto auto;
-  grid-template-rows: auto;
-  justify-content: center;
+  grid-template-rows: auto; */
   overflow: scroll;
   font-family: aktiv-grotesk-extended, sans-serif;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -47,11 +46,17 @@ i {
 .table {
   color: #fff;
   width: 550px;
+  margin: auto;
 }
 
 th,
 td {
   margin: 0 20px 0 20px;
+}
+
+.table th,
+.table td {
+  height: 50px;
 }
 
 .content {

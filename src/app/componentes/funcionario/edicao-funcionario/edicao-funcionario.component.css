@@ -88,6 +88,7 @@ input {
   border-radius: 41px;
   padding: 10px 30px;
   border: none;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .minha-modal {
@@ -121,4 +122,18 @@ input {
 
 .input-modal input {
   background-color: #fff;
+}
+
+.button-model {
+  border-radius: 5px;
+  margin-right: 15px;
+  border: none;
+  padding: 8px;
+  background-color: #FCD980;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  color: #1f222f;
+}
+
+.cancel {
+  background-color: #fc8080;
 }

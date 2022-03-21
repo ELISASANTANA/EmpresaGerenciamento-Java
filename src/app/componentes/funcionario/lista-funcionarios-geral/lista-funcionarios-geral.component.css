@@ -1,67 +1,30 @@
-.container {
+.container-fluid {
+  margin-top: 50px;
+}
+
+.container-k {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: auto;
   font-family: 'Poppins', sans-serif;
 }
 
-.list {
-  width: 85%;
-  height: 400px;
-  background-color: rgb(39, 48, 54);
-  border-radius: 15px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: grid;
-  justify-content: center;
-  overflow: scroll;
-  font-family: aktiv-grotesk-extended, sans-serif;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-}
-
-i {
-  cursor: pointer;
-  margin: 0 5px 0 5px;
-}
-
-.table {
+h3 {
   color: #fff;
-  width: 1050px;
 }
 
-.cont {
-  justify-content: space-evenly;
-  margin-top: 90px;
-}
-
-.cards {
-  height: 150px;
-  width: 300px;
-  background-color: rgba(255, 255, 255);
-  border-radius: 10px;
-}
-
-.foto {
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
-.foto img {
-  width: 120px;
+.content {
+  list-style: none;
 }
 
 .content__item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
   z-index: 1;
   pointer-events: none;
   position: fixed;
   top: 20%;
-  left: 85%;
+  left: 89%;
   transform: translate(-50%, -50%);
 }
 
@@ -114,11 +77,194 @@ i {
   transform: translate3d(100%, 0, 0);
 }
 
-.salarios {
-  margin-left: auto;
+.cards {
+  width: 250px;
+  height: 300px;
+  color: #fff;
+  /* #36373a */
+  margin-top: 80px;
+  font-family: 'Poppins', sans-serif;
 }
 
-.descricao {
-  align-items: center;
+img {
+  width: 100px;
+  border-radius: 50%;
+}
+
+.descricao_func {
+  background-color: #42515a;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  height: 35%;
+  width: 100%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+
+.info_func {
+  background-color: #36373a;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  height: 75%;
+  width: 100%;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.acoes {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0;
+}
+
+i {
+  cursor: pointer;
+  margin: 8px;
+}
+
+.minha-modal {
+  width: 450px;
+  height: 180px;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffff;
+  border-radius: 15px;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.text-modal {
+  background-color: #ffff;
+  color: #273036;
+}
+
+.title-modal {
+  padding: 18px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.button-model {
+  border-radius: 5px;
+  margin-right: 15px;
+  border: none;
+  padding: 8px;
+  background-color: #FCD980;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  color: #1f222f;
+}
+
+.cancel {
+  background-color: #fc8080;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container-k {
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 60px 0;
+  margin: auto;
+}
+
+.container-k .card {
+  position: relative;
+  width: 250px;
+  height: 350px;
+  background: rgba(255, 255, 255, 0.05);
+  margin: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+}
+
+.container-k .card .content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: 0.5s;
+}
+
+.container-k .card:hover .content {
+  transform: translateY(-20px);
+}
+
+.container-k .card .content .imgBx {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+}
+
+.container-k .card .content .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container-k .card .content .contentBx h3 {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+  margin: 20px 0 10px;
+  line-height: 1.1em;
+}
+
+.container-k .card .content .contentBx h3 span {
+  font-size: 16px;
+  font-weight: 300;
+  text-transform: initial;
+}
+
+.container-k .card .sci {
+  position: absolute;
+  bottom: 50px;
+  display: flex;
+}
+
+.container-k .card .sci li {
+  list-style: none;
+  margin: 0 10px;
+  transform: translateY(40px);
+  transition: 0.5s;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.container-k .card:hover .sci li {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+.container-k .card .sci li a {
+  color: #fff;
+  font-size: 17px;
+  text-decoration: underline;
 }

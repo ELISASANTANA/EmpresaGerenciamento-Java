@@ -1,9 +1,19 @@
+<!-- <ul class="content">
+  <li class="content__item">
+    <button routerLink="/cadastro-cargo" class="button button--mimas"><span>Adicionar cargo</span></button>
+  </li>
+</ul> -->
+
+<ul class="content">
+  <h3 class="text-center">Lista de cargos</h3>
+  <li class="content__item">
+    <div>
+      <button routerLink="/cadastro-cargo" class="button button--mimas"><span>Adicionar cargo</span></button>
+    </div>
+  </li>
+</ul>
+
 <div class="container">
-  <ul class="content">
-    <li class="content__item">
-      <button routerLink="/cadastro-cargo" class="button button--mimas"><span>Adicionar cargos</span></button>
-    </li>
-  </ul>
   <div class="list">
     <div class="cargo d-flex" *ngFor="let cargo of cargos">
       <div>
@@ -15,7 +25,7 @@
           <!-- <i routerLink="/funcionario-cargo/{{cargo.id_cargo}}" class="fa-solid fa-user text-primary"></i> -->
           <button routerLink="/funcionario-cargo/{{cargo.id_cargo}}" class="btn btn-warning">Funcionários</button>
         </td>
-        <i routerLink="/editar-cargo/{{cargo.id_cargo}}" class="fa-solid fa-pen mx-2"></i>
+        <i routerLink="/editar-cargo/{{cargo.id_cargo}}" class="fa-solid fa-pen mx-2 text-secondary"></i>
         <i routerLink="/excluir-cargo/{{cargo.id_cargo}}" class="fa-solid fa-eraser text-danger"></i>
       </div>
     </div>

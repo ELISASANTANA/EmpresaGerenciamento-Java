@@ -56,6 +56,7 @@ export class AtribuirFotoComponent implements OnInit {
         complete: () => console.log('ok')
       })
       alert("Foto inserida para o funcionário")
+      this.location.back()
     }
   }
 

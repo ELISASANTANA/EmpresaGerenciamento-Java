@@ -9,10 +9,20 @@
       <input type="text" placeholder=" " name='cargo_atribuicao' [(ngModel)]="funcionario.func_cidade">
       <label>Cidade do funcionário</label>
     </div>
-    <button (click)="cadastrarFuncionario()" class="button">Cadastrar</button>
-    <div class="file mt-4">
+    <div class="select">
+      <label>Cargo do funcionário</label>
+      <select name="id_cargo" class="form-select mb-3" [(ngModel)]="id_cargo">
+        <option>Selecione</option>
+        <option *ngFor="let cargo of cargos">
+          #{{cargo.id_cargo}} - {{cargo.cargo_nome}}
+        </option>
+      </select>
+    </div>
+    <button (click)="addWorker()" class="button mt-3">Cadastrar</button>
+
+    <!-- <div class="file mt-4">
       <label>Adicionar foto ao funcionário:</label>
       <input type="file" class="form-control" name="pro_foto" (change)="subirFoto($event)">
-    </div>
+    </div> -->
   </div>
 </div>

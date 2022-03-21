@@ -1,3 +1,12 @@
+<ul class="content">
+  <h3 class="text-center">Lista de funcionarios</h3>
+  <li class="content__item">
+    <div>
+      <button routerLink="/cadastrar-funcionario" class="button button--mimas"><span>Cadastrar
+          funcionário</span></button>
+    </div>
+  </li>
+</ul>
 <div class="container">
   <div class="list">
     <table class="table text-center">
@@ -9,8 +18,8 @@
           <th scope="col">ID Projeto</th>
           <th scope="col">Projeto</th>
           <th scope="col">Filial do Projeto</th>
-          <th scope="col">Atribuir Projeto</th>
-          <th scope="col">Ações</th>
+          <th scope="col" class="text-danger">Atribuir Projeto</th>
+          <!-- <th scope="col">Ações</th> -->
         </tr>
       </thead>
       <tbody>
@@ -21,13 +30,13 @@
           <td>{{funcionario.id_projeto}}</td>
           <td>{{funcionario.proj_nome}}</td>
           <td>{{funcionario.proj_filial}}</td>
-          <td><i class="fa-solid fa-circle-plus text-light"
+          <td><i class="fa-solid fa-circle-plus text-danger"
               routerLink="/projeto-funcionario/{{funcionario.id_funcionario}}"></i>
           </td>
-          <td>
+          <!-- <td>
             <i class="fa-solid fa-eraser text-danger"></i>
             <i class="fa-solid fa-pen"></i>
-          </td>
+          </td> -->
         </tr>
       </tbody>
     </table>

@@ -33,6 +33,8 @@ import { LoginComponent } from './componentes/templates/login/login.component';
 import { AtribuirFotoComponent } from './componentes/funcionario/atribuir-foto/atribuir-foto.component';
 import { CadastroProjetoComponent } from './componentes/projeto/cadastro-projeto/cadastro-projeto.component';
 import { EdicaoProjetoComponent } from './componentes/projeto/edicao-projeto/edicao-projeto.component';
+import { AtribuirCargoComponent } from './componentes/cargo/atribuir-cargo/atribuir-cargo.component';
+
 
 registerLocaleData(localePt)
 
@@ -63,7 +65,8 @@ registerLocaleData(localePt)
     LoginComponent,
     AtribuirFotoComponent,
     CadastroProjetoComponent,
-    EdicaoProjetoComponent
+    EdicaoProjetoComponent,
+    AtribuirCargoComponent
   ],
   imports: [
     BrowserModule,

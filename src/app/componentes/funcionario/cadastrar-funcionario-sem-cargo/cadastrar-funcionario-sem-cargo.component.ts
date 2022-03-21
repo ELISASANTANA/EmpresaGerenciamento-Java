@@ -1,8 +1,10 @@
+import { Cargo } from './../../../models/cargoModel';
+import { CargoService } from './../../../servicos/cargo.service';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
 import { FuncionarioService } from './../../../servicos/funcionario.service';
 import { Funcionario } from './../../../models/funcionarioModel';
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-cadastrar-funcionario-sem-cargo',
@@ -15,32 +17,54 @@ export class CadastrarFuncionarioSemCargoComponent implements OnInit {
     id_funcionario: '',
     func_nome: '',
     func_cidade: '',
-    func_foto: ''
+    func_foto: '../../../../assets/img/nopic.png'
   }
 
   foto: any
 
+  cargos: Cargo[] = []
+
   idFuncionarioCadastrado: any
+
+  id_cargo: any
+
+  cargo: any
 
   funcionarioCadastrado: boolean = false
 
   constructor(private funcionarioService: FuncionarioService,
-    private router: Router,
+    private cargoService: CargoService,
+    private location: Location,
     private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.listarCargos()
   }
 
-  cadastrarFuncionario() {
-    this.funcionarioService.addWorkerSemCargo(this.funcionario).subscribe({
+  listarCargos() {
+    this.cargoService.findAllJobs().subscribe((res) => {
+      this.cargos = res
+    })
+  }
+
+  addWorker() {
+    this.cargo = this.id_cargo.slice(1, 3)
+    console.log(this.cargo)
+    this.funcionarioService.addWorker(this.funcionario, this.cargo).subscribe({
+      next: () => {
+        alert(`Novo funcionário cadastradado no cargo ${this.id_cargo}`)
+        this.location.back()
+      },
+      error: erro => {
+        alert(`Erro ao cadastrar funcionário no cargo ${this.id_cargo}`)
+      },
       complete: () => {
-        alert("Funcionario cadastrado com sucesso")
+        console.log('complete')
         this.funcionarioService.buscarFuncionarioPeloNome(this.funcionario.func_nome).subscribe((res) => {
           this.idFuncionarioCadastrado = res.id_funcionario
           this.funcionarioCadastrado = true
         })
-      },
-      error: () => { alert("Erro ao cadastrar funcionário") }
+      }
     })
   }
 
@@ -54,12 +78,11 @@ export class CadastrarFuncionarioSemCargoComponent implements OnInit {
       const nome: String = this.funcionario.func_nome + "-" + event.target.files[0].name
 
       this.http.post(`http://localhost:8080/empresa/envio/${this.idFuncionarioCadastrado}?nome=${nome}`, formData).subscribe({
-        next: () => console.log("Foto enviada")
+        next: () => console.log("Foto enviada"),
+        complete: () => console.info('Ok')
       })
       alert("Foto inserida para o funcionário")
+      this.location.back()
     }
   }
-
-  // 'c:/home/elisasantana/Documents/empresa-spring/empresa-front/src/assets/img/renata-func.png'
-
 }

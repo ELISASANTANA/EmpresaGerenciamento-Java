@@ -2,28 +2,36 @@
   display: flex;
   justify-content: center;
   font-family: 'Poppins', sans-serif;
-}
-
-.list {
-  width: 60%;
-  height: 450px;
-  /* background-color: #273036; */
-  background-color: rgba(39, 48, 54, .45);
-  border-radius: 15px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  overflow: scroll;
 }
+
+h3 {
+  color: #fff;
+  text-align: center;
+}
+
+.list {
+  width: 70%;
+  height: 400px;
+  background-color: #273036;
+  background-color: rgba(39, 48, 54, .45);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: scroll;
+  position: fixed;
+  top: 58%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 
 .cargo {
   margin: 20px;
-  width: 700px;
+  width: 730px;
   height: 90px;
   background-color: rgba(39, 48, 54, .85);
   color: #ffff;
@@ -43,21 +51,17 @@ i {
   cursor: pointer;
 }
 
-
 .content {
-  position: relative;
-  left: 540px;
-  top: 25px;
+  list-style: none;
 }
 
 .content__item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
   z-index: 1;
   pointer-events: none;
+  position: fixed;
+  top: 20%;
+  left: 89%;
+  transform: translate(-50%, -50%);
 }
 
 .button {
@@ -68,6 +72,7 @@ i {
   font-size: inherit;
   position: relative;
   display: inline-block;
+  width: 280px;
 }
 
 .button::before,

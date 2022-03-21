@@ -23,11 +23,6 @@
       <h5 class=" text-modal title-modal">Transferir funcionário</h5>
     </div>
     <h6 class="my-4 text-modal">Para qual cargo deseja transferir o funcionário?</h6>
-    <!-- <div class="label-float my-5 input-modal">
-      <input type="text" placeholder=" " name='cargo_nome' style="width: 300px;" name="novo_cargo"
-        [(ngModel)]="novo_cargo">
-      <label>ID do cargo</label>
-    </div> -->
     <div class="p-4">
       <select class="form-select form-select-sm mb-3" name='cargo_nome' name="novo_cargo" [(ngModel)]="novo_cargo">
         <option *ngFor="let cargo of cargos">
@@ -35,7 +30,7 @@
         </option>
       </select>
     </div>
-    <button (click)="fecharModal()" class="btn">Cancelar</button>
-    <button (click)="trocarCargo()" class="btn">Confirmar</button>
+    <button (click)="fecharModal()" class="button-model">Cancelar</button>
+    <button (click)="trocarCargo()" class="button-model cancel">Confirmar</button>
   </div>
 </div>

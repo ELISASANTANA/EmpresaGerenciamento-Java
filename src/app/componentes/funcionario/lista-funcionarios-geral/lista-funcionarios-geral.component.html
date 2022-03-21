@@ -1,4 +1,5 @@
 <ul class="content">
+  <h3 class="text-center">Lista de funcionarios</h3>
   <li class="content__item">
     <div>
       <button routerLink="/cadastrar-funcionario" class="button button--mimas"><span>Cadastrar
@@ -6,23 +7,60 @@
     </div>
   </li>
 </ul>
-<div class="cont d-flex row">
-  <div class="cards my-3 d-flex" *ngFor="let funcionario of funcionarios">
-    <!--  [(ngModel)]="foto" name="foto" ngDefaultControl> -->
-    <div class="foto">
+<!-- <div class="container row ">
+  <div class="cards" *ngFor="let funcionario of funcionarios">
+    <div class="descricao_func">
       <img src="../../../../{{funcionario.func_foto}}">
     </div>
-    <div class="descricao">
-      <p>#{{funcionario.id_funcionario}}</p>
-      <h3>{{funcionario.func_nome}}</h3>
-      <h6>{{funcionario.func_cidade}}</h6>
+    <div class="info_func">
+      <div class="info">
+        <h3>{{funcionario.func_nome}}</h3>
+        <h5>{{funcionario.func_cidade}}</h5>
+      </div>
+      <div class="acoes">
+        <i routerLink="/salario-funcionario/{{funcionario.id_funcionario}}"
+          class="fa-solid fa-money-check text-success"></i>
+        <i (click)="abrirModal(funcionario.id_funcionario)" class="fa-solid fa-eraser text-danger"></i>
+        <i routerLink="/funcionario/atribuir-foto/{{funcionario.id_funcionario}}"
+          class="fa-solid fa-image text-secondary"></i>
+      </div>
     </div>
-    <div class="salarios">
-      <!-- <a routerLink="/salario-funcionario/{{funcionario.id_funcionario}}">Histórico de pagamentos</a> -->
-      <i routerLink="/salario-funcionario/{{funcionario.id_funcionario}}"
-        class="fa-solid fa-money-check text-warning "></i>
-      <i (click)="deletarFuncionario(funcionario.id_funcionario)" class="fa-solid fa-eraser text-danger"></i>
-      <i routerLink="/funcionario/atribuir-foto/{{funcionario.id_funcionario}}" class="fa-solid fa-circle-plus"></i>
+  </div>
+</div> -->
+
+<div class="container-fluid">
+  <div class="container-k">
+    <div class="card" *ngFor="let funcionario of funcionarios">
+      <div class="content">
+        <div class="imgBx">
+          <img src="../../../../{{funcionario.func_foto}}">
+        </div>
+        <div class="contentBx">
+          <h3>{{funcionario.func_nome}}<br><span>{{funcionario.func_cidade}}</span></h3>
+        </div>
+      </div>
+      <ul class="sci">
+        <li>
+          <a routerLink="/salario-funcionario/{{funcionario.id_funcionario}}">Salários</a>
+        </li>
+        <li>
+          <a routerLink="/funcionario/atribuir-foto/{{funcionario.id_funcionario}}">Perfil</a>
+        </li>
+        <li>
+          <a (click)="abrirModal(funcionario.id_funcionario)">Deletar</a>
+        </li>
+      </ul>
     </div>
+  </div>
+</div>
+
+<div *ngIf="modal">
+  <div class="minha-modal text-center">
+    <div>
+      <h5 class=" text-modal title-modal">Excluir Funcionário</h5>
+    </div>
+    <h6 class="my-4 text-modal">Realmente deseja excluir funcionário?</h6>
+    <button (click)="fecharModal()" class="button-model cancel">Cancelar</button>
+    <button (click)="deletarFuncionario()" class="button-model">Confirmar</button>
   </div>
 </div>

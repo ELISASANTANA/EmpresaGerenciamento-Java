@@ -93,3 +93,8 @@ input {
 .file {
   margin-right: auto;
 }
+
+.select {
+  width: 560px;
+  margin-right: auto;
+}

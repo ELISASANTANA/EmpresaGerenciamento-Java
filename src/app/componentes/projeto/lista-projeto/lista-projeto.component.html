@@ -1,9 +1,20 @@
+<!-- <ul class="content">
+  <li class="content__item">
+    <button routerLink="/projeto/cadastro" class="button button--mimas"><span>Adicionar projeto</span></button>
+  </li>
+</ul> -->
+
+<ul class="content">
+  <h3 class="text-center">Lista de projetos</h3>
+  <li class="content__item">
+    <div>
+      <button routerLink="/projeto/cadastro" class="button button--mimas"><span>Cadastrar
+          projeto</span></button>
+    </div>
+  </li>
+</ul>
+
 <div class="container">
-  <ul class="content">
-    <li class="content__item">
-      <button routerLink="/projeto/cadastro" class="button button--mimas"><span>Adicionar projeto</span></button>
-    </li>
-  </ul>
   <div class="list">
     <table class="table text-center">
       <thead>
@@ -11,24 +22,22 @@
           <th>ID</th>
           <th scope="col">Nome do projeto</th>
           <th scope="col">Filial do projeto</th>
-          <th scope="col">Atribuir lider</th>
+          <th scope="col" class="text-danger">Atribuir lider</th>
           <th scope="col">Nome do Líder</th>
           <th scope="col">Cidade do Líder</th>
           <th scope="col">Ações</th>
         </tr>
       </thead>
       <tbody>
-        <!-- fazer os cards -->
-        <!-- projeto.id_projeto, projeto.proj_nome, projeto.proj_filial, funcionario.func_nome, funcionario.func_cidade -->
         <tr *ngFor="let projeto of projetos">
           <td>#{{projeto.id_projeto}}</td>
           <td>{{projeto.proj_nome}}</td>
           <td>{{projeto.proj_filial}}</td>
-          <td><i routerLink="/projeto-lider/{{projeto.id_projeto}}" class="fa-solid fa-id-badge"></i></td>
+          <td><i routerLink="/projeto-lider/{{projeto.id_projeto}}" class="fa-solid fa-id-badge text-danger"></i></td>
           <td>{{projeto.func_nome}}</td>
           <td>{{projeto.func_cidade}}</td>
           <td>
-            <i routerLink="/projeto/editar/{{projeto.id_projeto}}" class="fa-solid fa-pen"></i>
+            <i routerLink="/projeto/editar/{{projeto.id_projeto}}" class="fa-solid fa-pen text-secondary"></i>
             <i (click)="abrirModal(projeto.id_projeto)" class="fa-solid fa-eraser text-danger"></i>
           </td>
         </tr>

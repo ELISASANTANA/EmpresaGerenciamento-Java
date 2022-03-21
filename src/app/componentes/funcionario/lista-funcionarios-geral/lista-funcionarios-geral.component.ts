@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaFuncionariosGeralComponent implements OnInit {
 
-  funcionarios: Funcionario[] = []
+  funcionarios: any = []
 
   id_funcionario: any
 
@@ -21,6 +21,10 @@ export class ListaFuncionariosGeralComponent implements OnInit {
     func_cidade: '',
     func_foto: ''
   }
+
+  funcionarioCargo: Funcionario[] = []
+
+  modal: boolean = false
 
   constructor(private funcionarioService: FuncionarioService, private router: Router, private location: Location) { }
 
@@ -32,15 +36,28 @@ export class ListaFuncionariosGeralComponent implements OnInit {
   listAllWorkers() {
     this.funcionarioService.findAllWorkers().subscribe(res => {
       this.funcionarios = res
+      console.log(res)
     })
   }
 
-  deletarFuncionario(id_funcionario: any) {
-    this.funcionarioService.excluirFuncionario(id_funcionario).subscribe({
-      next: () => alert("Funcionário excluído!"),
+  deletarFuncionario() {
+    this.funcionarioService.excluirFuncionario(this.id_funcionario).subscribe({
+      next: () => console.log("Funcionário excluído!"),
       error: erro => alert("Erro, ao excluir funcionario"),
-      complete: () => this.listAllWorkers()
+      complete: () => {
+        this.listAllWorkers()
+        this.modal = false
+      }
     })
+  }
+
+  abrirModal(id_funcionario: any) {
+    this.modal = true
+    this.id_funcionario = id_funcionario
+  }
+
+  fecharModal() {
+    this.modal = false
   }
 
 }
