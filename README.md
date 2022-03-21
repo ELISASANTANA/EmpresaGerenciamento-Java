@@ -1,3 +1,11 @@
+## EmpresaGerenciamento-Java
+
+Crud desenvolvido em Java e framework Spring Boot juntamente ao framework Angular
+
+## Documentation
+
+Com o servidor rodando é possível o acesso a documentação da aplicação pelo link: http://localhost:8080/swagger-ui/index.html
+
 # EmpresaFront
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.2.
@@ -26,10 +34,4 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
-## EmpresaGerenciamento-Java
 
-Crud desenvolvido em Java e framework Spring Boot juntamente ao framework Angular
-
-## Documentation
-
-Com o servidor rodando é possível o acesso a documentação da aplicação pelo link: http://localhost:8080/swagger-ui/index.html
